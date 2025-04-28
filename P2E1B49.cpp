@@ -74,4 +74,28 @@ if(ch=='a'||ch=='A')
         }
     }
 }
-//第三次完成主選單，當使用者輸入a跑出倒直角三角形
+
+if(ch=='b'||ch=='B'){
+ system("CLS");
+printf("輸入一個1至9的整數");
+{
+ while(1){
+ int num;
+ scanf(" %d",&num);
+ if(num>0&&num<10){
+  for(int k=1;k<=num;k++){
+   for(int l=1;l<=num;l++){
+    printf("%d*%d=%d ",k,l,k*l);
+   }
+   printf("\n");
+  }
+  printf("請按任意見返回主選單");
+        getch();
+        system("CLS");
+  break;
+ }
+ else printf("輸入錯誤請重新輸入");
+}
+}
+}
+//第四次完成當使用者輸入b跑出且根據使用者輸入的數字跑出99乘法表
