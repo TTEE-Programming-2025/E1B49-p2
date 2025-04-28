@@ -47,4 +47,31 @@ if(i==3)return 0;
 }
 system("CLS");
 fflush(stdin);
-//第二次讓使用者輸入密碼
+while(1){
+    printf("---------------------------\n");
+    printf("|   a.畫出直角三角形      |\n");
+    printf("|   b.顯示乘法表          |\n");
+    printf("|   c.結束                |\n");
+    printf("---------------------------\n");
+char ch,ch1;
+scanf(" %c",&ch);
+if(ch=='a'||ch=='A')
+{
+    system("CLS");
+    printf("請輸入一個'a'到'n'的字元");
+    while(1){
+        fflush(stdin);
+        scanf(" %c",&ch1);
+        if(ch1<'a'||ch1>'n'){
+        printf("輸入錯誤,請重新輸入\n");
+        }
+    else{
+        footform(ch1);
+        printf("請按任意見返回主選單");
+        getch();
+        system("CLS");
+        break;
+        }
+    }
+}
+//第三次完成主選單，當使用者輸入a跑出倒直角三角形
