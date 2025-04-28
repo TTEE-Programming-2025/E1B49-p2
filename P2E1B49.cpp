@@ -98,4 +98,25 @@ printf("輸入一個1至9的整數");
 }
 }
 }
-//第四次完成當使用者輸入b跑出且根據使用者輸入的數字跑出99乘法表
+if(ch=='c'||ch=='C')
+system("CLS");
+printf("'Continue?(y/n)'是否要重新輸入?");
+{
+ while(1){
+ char tof;
+ scanf(" %c",&tof);
+ if(tof=='Y'||tof=='y'){
+  system("CLS");
+  break;
+ }
+ else if(tof=='N'||tof=='n'){
+  return 0;
+ }
+ else printf("輸入錯誤請重新輸入");
+}
+}
+
+
+
+    }
+}//第五次完成當使用者輸入c詢問使用者是否要回主選或是結束程式
