@@ -249,7 +249,7 @@ int main() {
         if (choose == 'd') {
             printf("Do you want to restart? (y/n):\n");
             while (1) {
-                char tof;
+                char tof;    
                 scanf(" %c", &tof);
                 if (tof == 'Y' || tof == 'y') {
                     system("CLS");
