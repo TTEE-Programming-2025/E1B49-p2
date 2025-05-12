@@ -233,6 +233,57 @@ if(choose=='b')
 	}
 	system("CLS");
 }
+
+//Step 5 Enter 'c' Ask the user how many seats they want to reserve
+if(choose=='c')
+{
+	int num;
+    char temp[10];
+    int row,col;
+    int valid=1;
+    
+    printf("你要輸入幾個座位:");
+    scanf(" %d",&num);
+    fflush(stdin);
+    
+    for(int n=0;n<num;n++)
+    {
+    	printf("請輸入第%d個座位(格式：列-行,例如 1-2):",n+1);
+    	fgets(temp,sizeof(temp),stdin);
+    	
+    	//Check the format
+		if (sscanf(temp,"%d-%d",&row,&col)!= 2||row<1||row>9||col<1||col>9)
+        {
+            printf("格式錯誤或超出範圍，請重新輸入！\n");
+            n--;
+			continue;
+        }
+        
+        //Convert to array
+        row=9-row; 
+        col=col-1;
+        
+        if (seats[row][col]!='-')
+        {
+            printf("此位置已被佔用，請重新輸入！\n");
+            n--;
+			continue;
+        }
+        seats[row][col]='@';
+	}
+	
+	showseats(seats);
+	printf("若以上排位無誤，請按任意鍵確認...\n");
+    getch();
+    
+    //Replace '@' with '*'
+    for (int i=0;i<SIZE;i++)
+        for (int j=0;j<SIZE;j++)
+            if (seats[i][j] == '@')
+                seats[i][j] = '*';
+
+    system("CLS");
+}
 return 0;
 }
 }
